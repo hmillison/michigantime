@@ -1,0 +1,98 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+
+ html,
+    body {
+        height: 100%;
+        width: 100%;
+    }
+    body {
+        margin: 0;
+        font-family: 'Roboto Slab', serif;
+        color:#000;
+    }
+
+    .navbar-inverse {
+        border-radius:0px;
+    }
+
+
+    .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+        color: #fff;
+    }
+
+    .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+        color: #ddd;
+    }
+
+    .row{
+      background-attachment: fixed;
+      background-position: 20% 20%;
+      background-color: #ddd;
+      border-bottom: 2px solid rgba(0,0,0,0.5);
+      padding:5%;
+      font-size:30px;
+    }
+
+    .row.station{
+      color:#000;
+    }
+
+    .results{
+      width:100%;
+    }
+
+/*==========  Animations  ==========*/
+.animate.ng-enter, .animate.ng-leave {
+  transition: 1s ease-in all;
+  position: relative;
+  display: block;
+} 
+
+.animate.ng-enter.ng-enter-active, .animate.ng-leave {
+  opacity: 1;
+}
+.animate.ng-leave.ng-leave-active, .animate.ng-enter {
+  opacity: 0;
+}
+
+/*==========  Train Styling  ==========*/
+.train-1, .train-2, .train-3
+{
+  background-color:#EF4836;
+}
+
+.train-4, .train-5, .train-5x, .train-6, .train-6X{
+background-image: -webkit-linear-gradient(top, #26A65B, #2ECC71);
+background-image: -moz-linear-gradient(top, #26A65B, #2ECC71);
+background-image: -ms-linear-gradient(top, #26A65B, #2ECC71);
+background-image: -o-linear-gradient(top, #26A65B, #2ECC71);
+background-image: linear-gradient(to bottom, #26A65B, #2ECC71);
+}
+
+.train-7, .train-7X{
+  background-color:#9B59B6;
+}
+
+.train-A, .train-C, .train-E{
+  background-color:#2574A9;
+}
+
+.train-B, .train-D, .train-F, .train-M{
+  background-color:#F27935;
+}
+
+.train-G{
+  background-color:#3FC380
+}
+
+.train-L, .train-GS, .train-H{
+  background-color:#95A5A6
+}
+
+.train-J, .train-Z{
+
+}
+
+.train-N, .train-Q, .train-R{
+  background-color:#F9BF3B;
+}

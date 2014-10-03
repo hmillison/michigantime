@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" ng-app="michigantime" >
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Michigan Time</title>
+  <link rel="icon" href="img/favicon.png" type="image/png" >
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body ng-controller="MainController">
+  <nav class="navbar navbar-inverse">
+    <a class="navbar-brand">Michigan Time</a>
+    
+  </nav>
+  <div class="container text-center">
+    <div class="alert alert-info">
+      {{ loading }}
+    </div>
+     <div id="coords">
+    </div>
+    
+  </div>
+  <div class="container text-center results" >
+    <div class="animate" data-ng-repeat="bus in buses | orderBy:'distance*1'">
+      <div class="row" ng-view class="reveal-animation">{{ bus }}</div>
+    </div>
+  </div>
+ 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+  <script src="/components/angular-resource/angular-resource.js"></script>
+  <script src="components/angular-animate/angular-animate.js"></script>
+  <script src="js/core.js"></script>
+</body>
+</html>
