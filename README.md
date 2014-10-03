@@ -1,3 +1,3 @@
-NYC Subway Finder
+Michigan Time
 =========
-simple web app that takes in your location and lets you know when the trains near you will be arriving
+Based on my app NY Minute, I refactored it and used the Michigan Bus API to get real time bus arrival times near you!
