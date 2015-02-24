@@ -1,6 +1,5 @@
 # api.rb
 require 'rubygems'
-require 'thin'
 require 'sinatra'
 require "sinatra/json"
 require 'rest_client'
