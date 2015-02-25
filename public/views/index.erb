@@ -12,20 +12,26 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <script src="js/lib/modernizr-2.8.3.min.js"></script>
+        <script src="//localhost:35729/livereload.js"></script>
     </head>
     <body ng-controller="BusCtrl">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-        <div class="row" ng-repeat="stop in results | orderBy:'dist*1'">
-            {{stop.name}} - {{stop.dist}} mi
-            <ul>
-                <li ng-repeat="bus in stop.etas">
-                    {{bus.name}} -- {{bus.avg}} minutes
-                </li>
-            </ul>
+        <div class="grid-container">
+            <div class="row" ng-repeat="stop in results | orderBy:'dist*1'">
+                <div class="col">
+                    {{stop.name}} - {{stop.dist | number:2}} mi
+                </div>
+                <div class="col">
+                    {{stop.etas[0].shortname}} - {{stop.etas[0].avg}} minutes
+                </div>
+                <div class="col">
+                    <i class="fa fa-caret-square-o-down fa-2x"></i>
+                </div>
+            </div>
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
