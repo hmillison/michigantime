@@ -5,8 +5,17 @@ require "sinatra/json"
 require 'rest_client'
 require "json"
 
+set :views, Proc.new { File.join(root, "/public/views") }
+
+
+get '/' do
+  erb :index
+end
+
 get '/near' do
-    loc = [42.277565,-83.7354167]
+    lat = params[:lat].to_f
+    lng = params[:lng].to_f
+    loc = [lat,lng]
     closest = []
     stops = get_stops()
     routes = get_routes()
@@ -26,9 +35,10 @@ get '/near' do
             id = stop_obj['stopID']
             eta_response = JSON.parse(get_etas(id))
             etas = eta_response['etas']["#{id}"]['etas']
-            stop_obj['etas'] = reformat_etas(etas, routes)
-
-            closest << stop_obj
+            if etas.length > 0
+              stop_obj['etas'] = reformat_etas(etas, routes)
+              closest << stop_obj
+            end
         end
     end
 
